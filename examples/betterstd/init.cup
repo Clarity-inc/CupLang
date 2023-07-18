@@ -1,0 +1,20 @@
+use (
+    "package_maker"
+)
+
+package {
+    "description": "A Better std module for cuplang",
+    "website": void,
+    "local": true,
+    "required_packages": [
+        "std",
+        "String",
+        "waiting",
+        "memory_management"
+    ]
+}
+
+import (
+    "./betterprint.cup",
+    "./betterinput.cup"
+)

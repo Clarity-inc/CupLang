@@ -1,0 +1,6 @@
+use (
+    "betterstd"
+)
+func Main(Array arguments) {
+    Betterprint("Hello, {arguments[0]}!\nHow are you?");
+}

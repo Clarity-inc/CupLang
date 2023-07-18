@@ -1,0 +1,24 @@
+use (
+    "std",
+    "waiting",
+    "String"
+)
+
+func BetterInput(String wait_for) -> String {
+    String old_console = get_raw_conso();
+    String new_console = "";
+    const Int wait_for_lenght = StringLenght(wait_for);
+    String StringInEval = "";
+    while (wait_for != StringInEval) {
+        new_console = get_raw_conso(old_console);
+        if (new_console == void) {
+            wait(50);
+            continue;
+        }
+        StringInEval += new_console;
+        if (StringLenght(StringInEval) > wait_for_lenght) {
+            String_delete_start(StringInEval, StringLenght(new_console));
+        }
+    }
+    return StringInEval;
+}

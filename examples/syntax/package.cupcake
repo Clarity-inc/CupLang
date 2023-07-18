@@ -1,0 +1,4 @@
+"betterstd": "../betterstd/init.cup"
+"std": "./cupModules/std/init.s"
+"memory_management": "./cupModules/memory_management/init.s"
+"String": "./cupModules/String/init.s"

@@ -1,0 +1,22 @@
+use (
+    "std",
+    "memory_management",
+    "String",
+    "Array",
+    "Any",
+    "Boolean"
+)
+
+func BetterPrint(Any contents*, String end = "\n", String split = " ") -> Boolean {
+    let String final_content = "";
+    try {
+        for (let Int i = 0; i > lenght(contents); i = i + 1) {
+            final_content = final_content + Stringify(content) + split;
+        }
+        replace_end(final_content, split);
+        raw_std_input(final_content + end);
+        return true;
+    } except (e) {
+        return false;
+    }
+}

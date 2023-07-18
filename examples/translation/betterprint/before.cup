@@ -1,0 +1,20 @@
+use (
+    "std",
+    "memory_management",
+    "String"
+)
+
+func BetterPrint(Any contents*, String end = "\n", String split = " ") -> Boolean {
+    String final_content = "";
+    try {
+        for (const Any content in contents) {
+            final_content += Stringify(content) + split;
+        }
+        replace_end(final_content, split)
+        merge final_content -> content;
+        raw_std_input(content + end);
+        return true;
+    } except (e) {
+        return false;
+    }
+}
