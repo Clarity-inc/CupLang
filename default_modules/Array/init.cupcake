@@ -1,0 +1,10 @@
+package {
+    "description": "A very usefull module for String usage in CupLang",
+    "website": void,
+    "local": true,
+    "required_packages": [],
+    "import": [
+        "./length.s",
+        "./ArrayGet.s"
+    ]
+}
