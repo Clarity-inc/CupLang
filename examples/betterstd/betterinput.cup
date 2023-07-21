@@ -10,7 +10,7 @@ func BetterInput(String wait_for) -> String {
     const Int wait_for_lenght = StringLenght(wait_for);
     String StringInEval = "";
     while (wait_for != StringInEval) {
-        new_console = get_raw_conso(old_console);
+        new_console = separate_old_new(old_console, get_raw_conso());
         if (new_console == void) {
             wait(50);
             continue;
