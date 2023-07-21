@@ -1,0 +1,29 @@
+use (
+    "betterstd",
+    "String",
+    "Array"
+)
+
+Hmap hello = {
+    "test": "Hello, world!"
+}
+
+Array hellok = [
+    "test"
+];
+
+Array hellov = [
+    "Hello, world!"
+];
+
+func main() {
+    Int i = 0;
+    while (i < length(hellok)) {
+        if (hellok == ArrayGet(hellok, i)) {
+            String val = ArrayGet(hellov, i);
+        }
+        i = i + 1;
+    }
+    delete i;
+    betterprint(val);
+}

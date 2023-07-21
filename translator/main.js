@@ -24,6 +24,6 @@ module.exports = function(folder, callback = null) {
     code = comments(code);
     code = developp_func(code);
     const function_info = func_info(code);
-    code = developp_var(code, function_info);
     code = plusequal(code);
+    code = developp_var(code, function_info);
 }

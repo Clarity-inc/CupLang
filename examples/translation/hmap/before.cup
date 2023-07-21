@@ -1,0 +1,11 @@
+use (
+    "betterstd"
+)
+
+Hmap hello = {
+    "test": "Hello, world!"
+}
+
+func main() {
+    betterprint(hello["test"]);
+}

@@ -1,0 +1,10 @@
+package {
+    "description": "A very basic and raw std module for cuplang",
+    "website": void,
+    "local": true,
+    "required_packages": [],
+    "import": [
+        "./raw_std_input.s",
+        "./get_raw_conso.s"
+    ]
+}

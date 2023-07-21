@@ -1,0 +1,12 @@
+package {
+    "description": "A very usefull module for Int usage in CupLang",
+    "website": void,
+    "local": true,
+    "required_packages": [],
+    "import": [
+        "./addition.s",
+        "./substraction.s",
+        "./multiplications.s",
+        "./divisions.s"
+    ]
+}
