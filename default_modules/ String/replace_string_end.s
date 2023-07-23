@@ -3,7 +3,6 @@ replace_string_end:
     mov ebp, esp
     mov edi, [ebp + 8]
     mov esi, [ebp + 12]
-
     xor ecx, ecx
     mov eax, edi
     find_end_of_string:

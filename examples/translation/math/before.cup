@@ -1,0 +1,8 @@
+use (
+    "betterstd"
+)
+
+func Main() {
+    Int result = 9 / 7 * 29 / 30;
+    BetterPrint(result);
+}

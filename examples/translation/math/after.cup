@@ -1,0 +1,13 @@
+use (
+    "betterstd",
+    "String",
+    "Int",
+    "std",
+    "Array",
+    "Any"
+)
+
+func Main() {
+    let Int result = division(9, mutliplication(7, division(29, 30)));
+    BetterPrint(result);
+}

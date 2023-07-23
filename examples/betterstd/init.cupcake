@@ -11,5 +11,10 @@ package {
     "import": [
         ./betterprint.cup",
         "./betterinput.cup"
-    ]
+    ],
+    "functions": {
+        "BetterPrint": {
+            "description": "todo (too lazy rn)"
+        }
+    }
 }

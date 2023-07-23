@@ -48,7 +48,6 @@ LoopStart:
     jge LoopEnd
 
     mov edx, [ebx + eax * 4]
-
     test edx, 1
     jz ProcessInteger
     call ProcessString
