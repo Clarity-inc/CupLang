@@ -5,6 +5,7 @@ const plusequal = require('./plusequal');
 const developp_var = require('./developp_var');
 const func_info = require('./func_info');
 const developp_func = require('./developp_func');
+const math = require("./math");
 
 module.exports = function(folder, callback = null) {
     const main = `${folder}/main.cup`;
@@ -24,6 +25,7 @@ module.exports = function(folder, callback = null) {
     code = comments(code);
     code = developp_func(code);
     const function_info = func_info(code);
-    code = plusequal(code);
+    code = math(code);
     code = developp_var(code, function_info);
+    variables_info = var_info(code, function_info);
 }

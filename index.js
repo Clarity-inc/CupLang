@@ -49,7 +49,6 @@ function exec_command(output) {
                 return;
             });
             return;
-        
         case "asmfriendly":
             console.log("This feature is still in developpement!\nWe are trying really hard to make asm simpler!");
             return;
