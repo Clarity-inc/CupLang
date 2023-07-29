@@ -49,7 +49,7 @@ module.exports = function(code) {
                 letter = letters[i];
                 if (!has_name) {
                     if (anti.has(letter)) {
-                        error(`The function on line ${i} has a illegal name\n${code}`);
+                        error(`The function on line ${i} has an illegal name (char ${letter} is invalid\n${code}`);
                     }
                     if (letter === '(') {
                         if (info.has(result)) {
