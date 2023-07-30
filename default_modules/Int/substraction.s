@@ -1,4 +1,4 @@
-subtraction:
+substraction:
     push ebp
     mov ebp, esp
     mov eax, [ebp + 12]

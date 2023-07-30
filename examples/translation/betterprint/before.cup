@@ -6,15 +6,10 @@ use (
 
 func BetterPrint(Any contents*, String end = "\n", String split = " ") -> Boolean {
     String final_content = "";
-    try {
-        for (const Any content in contents) {
-            final_content += Stringify(content) + split;
-        }
-        replace_end(final_content, split)
-        merge final_content -> content;
-        raw_std_input(content + end);
-        return true;
-    } except (e) {
-        return false;
+    for (const Any content in contents) {
+        final_content += Stringify(content) + split;
     }
+    replace_end(final_content, split)
+    raw_std_input(final_content + end);
+    return true;
 }

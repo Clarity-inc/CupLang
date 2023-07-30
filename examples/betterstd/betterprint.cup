@@ -1,19 +1,13 @@
 use (
-    "std",
-    "memory_management",
-    "String"
+    "std"
 )
 
 func BetterPrint(Any contents*, String end = "\n", String split = " ") -> Boolean {
-    let String final_content = "";
-    let Int i = 0;
-    while (i > length(contents)) {
-        final_content = AppendString(final_content, Stringify(content));
-        final_content = AppendString(final_content, split);
-        i = i + 1;
+    String final_content = "";
+    for (const Any content in contents) {
+        final_content += Stringify(content) + split;
     }
-    delete i;
-    replace_end(final_content, split);
-    raw_std_input(AppendString(final_content, end));
+    replace_end(final_content, split)
+    raw_std_input(final_content + end);
     return true;
 }

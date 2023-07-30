@@ -13,12 +13,12 @@ module.exports = function(code) {
                 for (let i = 0; i < (line.length - result.length); i++) {
                     result += line[i];
                 }
-                new_code += result + " -> void {";
+                new_code += result + " -> void {\n";
             } else {
-                new_code += line;
+                new_code += line + '\n';
             }
         } else {
-            new_code += line;
+            new_code += line + '\n';
         }
     }
     return new_code;
