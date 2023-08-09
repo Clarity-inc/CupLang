@@ -1,4 +1,4 @@
-const error = require(`${process.cwd()}/error`);
+const error = require(`../error`);
 
 const anti = [
     " ",

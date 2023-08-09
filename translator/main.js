@@ -1,5 +1,5 @@
 const fs = require('fs');
-const error = require(`${process.cwd()}/error`);
+const error = require(`../error`);
 const comments = require('./comments');
 const plusequal = require('./plusequal');
 const developp_var = require('./developp_var');

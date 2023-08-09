@@ -1,4 +1,4 @@
-"betterstd": "../betterstd/init.cupcake"
-"std": "./cupModules/std/init.cupcake"
-"memory_management": "./cupModules/memory_management/init.cupcake"
-"String": "./cupModules/String/init.cupcake"
+betterstd: ../betterstd/init.cupcake
+std: ./cupModules/std/init.cupcake
+memory_management: ./cupModules/memory_management/init.cupcake
+String: ./cupModules/String/init.cupcake

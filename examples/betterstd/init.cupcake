@@ -8,6 +8,12 @@ package {
         "waiting",
         "memory_management"
     ],
+    "required_packages_location": [
+        "std": "./cupModules/std/init.cupcake",
+        "String": "../../default_modules/String/init.cupcake",
+        "waiting": "../../default_modules/Waiting/init.cupcake",
+        "memory_management": "autohere"
+    ]
     "import": [
         ./betterprint.cup",
         "./betterinput.cup"

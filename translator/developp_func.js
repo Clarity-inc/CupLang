@@ -1,4 +1,4 @@
-const get_after = require(`${process.cwd()}/utils/get_after`);
+const get_after = require(`..//utils/get_after`);
 module.exports = function(code) {
     const lines = code.split('\n');
     let line = "";
