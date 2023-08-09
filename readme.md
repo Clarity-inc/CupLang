@@ -221,5 +221,90 @@ while {
     BetterPrint("HIHIHI");
 }
 ```
-# Todo:
-Finish the readme. I'm going to bed rn bye
+# if, else, elif & finalif
+## Signs
+### ==
+Comparing if the value of some things are the same
+### =|=
+Comparing if the type of the values are the same
+### !=
+Comparing if the type of the values are not the same
+### <
+Comparing if one value is smaller then the other (For integer/float only if variables are strings the length of the string are going to be compared)
+### >
+### <
+Comparing if one value is bigger then the other (For integer/float only if variables are strings the length of the string are going to be compared)
+### !
+Reverse the condition
+### and/&&
+You can use ether && or and it's up to you, it unifies multiples conditions
+### or/||
+You can use ether || or or it's up to you, it adds multiples conditions that can return true if one is right
+## if
+The if statement is used to compare two values or more with a condition
+<br>
+Example:
+```
+if (hello == "Hello, world!") {
+    BetterPrint("Hi");
+}
+```
+## else
+If the condition is false then else (if present) will be activated!
+<br>
+Example:
+```
+if (hello == "Hello, world!") {
+    BetterPrint("Hi");
+} else {
+    BetterPrint("GoodBye!");
+}
+```
+## elif
+If the condition is false and you want to recheck with if it can take a lot place in your code and else if looks horrible so we made elif
+<br>
+Example:
+```
+if (hello == "Hello, world!") {
+    BetterPrint("Hi");
+} elif (hello == "hi") {
+    BetterPrint("Hi!");
+} else {
+    BetterPrint("...");
+}
+```
+## finalif
+The new one, finalif is a function onlyif that will end the function in a proper way
+<br>
+For example:
+<br>
+Instead of
+```cup
+func Hello(String argument) {
+    if (argument == "hi") {
+        BetterPrint("Hello!");
+        return;
+    }
+    BetterPrint("Ok");
+}
+```
+Do that
+```cup
+func Hello(String argument) {
+    finalif (argument == "hi") {
+        BetterPrint("Hello!");
+    }
+    BetterPrint("Ok");
+}
+```
+Or that, depends on your preferences
+```cup
+func Hello(String argument) {
+    finalif (argument == "hi") {
+        BetterPrint("Hello!");
+    } else {
+        BetterPrint("Ok");
+    }
+}
+```
+# Use
