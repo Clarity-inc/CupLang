@@ -307,4 +307,81 @@ func Hello(String argument) {
     }
 }
 ```
-# Use
+# Use/import
+To import modules and files it's a bit complex sometimes but not with cupLang!
+<br>
+use and import exists!
+<br>
+Example :
+```cup
+use (
+    "BetterStd"
+)
+
+import (
+    "myotherfile.cup"
+)
+```
+In cuplang import and use are like include they include everything that is in the file to your now code
+<br>
+Example :
+<br>
+my_cool_file.cup
+```cup
+use (
+    "BetterStd"
+)
+
+func Hello(String ok) {
+    BetterPrint(ok);
+}
+```
+<br>
+Main.cup
+```cup
+import (
+    "my_cool_file.cup"
+)
+
+func Main() {
+    Hello("ok");
+    BetterPrint("You can also use the imports that are in the other files!");
+}
+```
+So welcome to usecenters!
+<br>
+usecenters.cup
+```cup
+use (
+    "BetterStd",
+    "http"
+)
+```
+main.cup
+```cup
+import (
+    "./usecenters.cup"
+)
+
+func Main() {
+    BetterPrint("Hello!");
+}
+```
+Oh yeah and you can do that!
+<br>
+hello.cup
+```cup
+func Main() {
+    BetterPrint("Hok");
+}
+```
+main.cup
+```cup
+import (
+    "hello.cup"
+)
+```
+# tomake :
+making docs for commands<br>
+Making docs for translation<br>
+Making docs for speed comparason

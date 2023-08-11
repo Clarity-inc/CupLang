@@ -13,8 +13,8 @@ function exec_command(output) {
         return true;
     }
     output = output.split(' ');
-    if (!commands[output[0]]) {
-        commands.help(output);
+    if (!commands[output[0]] || output[0] === 'help' ) {
+        commands.help(output, commands);
         return;
     }
     commands[output[0]](output);
