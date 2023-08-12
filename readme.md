@@ -30,6 +30,8 @@ Example
 ```cup
 func this_function_returns_hello() -> String {
     returning String myreturning = "Hello";
+    // or without specifing the type of the variable, because we do not need it as it's already written in the beginning of the function os you can do that
+    // returning myreturning = "Hello";
 }
 ```
 The function now returns Hello!
@@ -88,7 +90,7 @@ Dictionaries store key-value pairs, allowing you to associate values with unique
 Example:
 
 ```cup
-Dict person = dict{
+Dict person = {
     "name": "John",
     "age": 30,
     "city": "New York"
@@ -100,7 +102,7 @@ Arrays store lists of values. Each value can be accessed using its index.
 Example:
 
 ```cup
-Array fruits = array["apple", "banana", "orange"];
+Array fruits = ["apple", "banana", "orange"];
 ```
 ## Functions
 ### Main
