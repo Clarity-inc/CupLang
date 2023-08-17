@@ -1,6 +1,3 @@
-const error = require('./error');
-const translate = require('./translator/main');
-const run = require('./runner');
 const fs = require('fs');
 
 let commands = {};
@@ -14,10 +11,10 @@ function exec_command(output) {
     }
     output = output.split(' ');
     if (!commands[output[0]] || output[0] === 'help' ) {
-        commands.help(output, commands);
+        commands.help.func(output, commands);
         return;
     }
-    commands[output[0]](output);
+    commands[output[0]].func(output);
 }
 
 if (exec_command(process.argv.slice(2))){
