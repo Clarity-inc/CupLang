@@ -22,6 +22,6 @@ function exec_command(output) {
 
 if (exec_command(process.argv.slice(2))){
     while (true) {
-        exec_command(prompt("> ").split(' '));
+        exec_command(prompt("> "));
     }
 }
