@@ -2,6 +2,7 @@ const fs = require('fs');
 const error = require(`../error`);
 const comments = require('./comments');
 const plusequal = require('./plusequal');
+const var_info = require('./var_info');
 const developp_var = require('./developp_var');
 const func_info = require('./func_info');
 const developp_func = require('./developp_func');

@@ -1,7 +1,7 @@
 function compileFile(file) {
     // todo : this function convert asm file to machine code file using another command like gcc or else
 }
-
+const translate = require('../translator/main');
 module.exports = {
     description: "Compile a cup project into asm or machine code",
     func: function(output) {
@@ -36,4 +36,4 @@ module.exports = {
         });
         return;
     }
-}
+};

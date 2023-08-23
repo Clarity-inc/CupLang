@@ -10,4 +10,4 @@ module.exports = {
         fs.mkdirSync(`${process.cwd()}/cupModules`);
         console.log("[==========] 100% yay !\nProject base created successfully!");
     }
-}
+};

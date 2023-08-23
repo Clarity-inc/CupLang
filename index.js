@@ -17,7 +17,7 @@ function exec_command(output) {
     commands[output[0]].func(output);
 }
 
-if (exec_command(process.argv.slice(2))){
+if (exec_command(process.argv.slice(2))) {
     while (true) {
         exec_command(prompt("> "));
     }

@@ -30,25 +30,13 @@ Example
 ```cup
 func this_function_returns_hello() -> String {
     returning String myreturning = "Hello";
-    // or without specifing the type of the variable, because we do not need it as it's already written in the beginning of the function os you can do that
+    // or without specifing the type of the variable, because we do not need it as it's already written in the beginning of the function so you can do that
     // returning myreturning = "Hello";
 }
 ```
 The function now returns Hello!
 <br>
-The returning variable can take another type for instance
-```cup
-use (
-    "file-manager"
-)
-
-func delete_all(normal: Dict, to_delete: String) -> Dict {
-    returning const Dict myreturning = normal.remove(to_delete);
-    FileDelete(normal[to_delete]);
-}
-
-```
-(You can also write const returning Dict myreturning = normal.remove(to_delete))
+Returning can only be a let and will automatically be a let
 <br>
 In CupLang there are 5 variables types!
 <br>
