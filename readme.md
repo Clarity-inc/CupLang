@@ -32,7 +32,7 @@ func this_function_returns_hello() -> String {
     returning String myreturning = "Hello";
     // or without specifing the type of the variable, because we do not need it as it's already written in the beginning of the function so you can do that
     // returning myreturning = "Hello";
-}
+}  
 ```
 The function now returns Hello!
 <br>
