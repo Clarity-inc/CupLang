@@ -2,9 +2,7 @@ ArrayGet:
     push ebp
     mov ebp, esp
     mov ecx, [ebp + 8]
-    mov edx, [ebp + 12]
-    mov eax, [ebp + 16]
-    mov eax, edx
+    mov eax, [ebp + 12]
     imul eax, eax, 4
     mov esi, ecx
     add esi, eax
