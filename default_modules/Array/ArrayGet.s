@@ -4,7 +4,7 @@ ArrayGet:
     mov ecx, [ebp + 8]
     mov edx, [ebp + 12]
     mov eax, [ebp + 16]
-    movzx eax, edx
+    mov eax, edx
     imul eax, eax, 4
     mov esi, ecx
     add esi, eax
