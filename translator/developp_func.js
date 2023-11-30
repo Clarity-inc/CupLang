@@ -1,5 +1,6 @@
 const get_after = require(`..//utils/get_after`);
-module.exports = function(code) {
+module.exports = function(data) {
+    const code = data.code;
     const lines = code.split('\n');
     let line = "";
     let result = "";
@@ -21,5 +22,6 @@ module.exports = function(code) {
             new_code += line + '\n';
         }
     }
-    return new_code;
+    data.code = new_code;
+    return data;
 }

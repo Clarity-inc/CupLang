@@ -6,7 +6,9 @@ const types = [
     'Int'
 ];
 
-module.exports = function(code, func_info) {
+module.exports = function(data) {
+    const code = data.code;
+    const func_info = data.function_info;
     let lines = code.split('\n');
     let newcontent = "";
     let infunc = false;

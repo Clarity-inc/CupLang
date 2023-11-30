@@ -1,4 +1,5 @@
-module.exports = function(code) {
+module.exports = function(data) {
+    const code = data.code;
     let old_letter = "";
     let is_big_comment = false;
     let is_comment = false;
@@ -23,5 +24,6 @@ module.exports = function(code) {
         }
         old_letter = letter;
     }
-    return new_code;
+    data.code = new_code;
+    return data;
 }

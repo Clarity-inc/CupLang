@@ -55,7 +55,8 @@ module.exports = function betterformula(formula) {
     return formula;
 }; 
 
-module.exports = function(code) {
+module.exports = function(data) {
+    const code = data.code;
     const mathFormulasLines = [];
     const mathLineRegex = /^[^]*?[+\-*/()\^%=\d\s]+[^]*$/gm;
     const matches = code.match(mathLineRegex);
@@ -78,5 +79,6 @@ module.exports = function(code) {
             newcode += line + '\n';
         }
     }
+    data.code = newcode;
     return newcode;
 };

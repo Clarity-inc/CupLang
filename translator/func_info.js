@@ -18,7 +18,8 @@ const anti = [
     '}'
 ];
 
-module.exports = function(code) {
+module.exports = function(data) {
+    const code = data.code;
     let infunc;
     let func_content = "";
     let openpar = 0;
@@ -146,5 +147,6 @@ module.exports = function(code) {
             }
         }
     }
-    return info;
+    data.function_info = info;
+    return data;
 }

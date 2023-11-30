@@ -17,15 +17,24 @@ module.exports = function(folder, callback = null) {
     if (!fs.existsSync(package_manager)) {
         error(`The file ${package_manager} does not exist.`);
     }
+    let data = {};
     try {
-        let code = fs.readFileSync(main, 'utf8');
+        data.code = fs.readFileSync(main, 'utf8');
     } catch (err) {
         error(`Error reading file: ${err}`);
         return;
     }
-    code = comments(code);
-    code = developp_func(code);
-    const function_info = func_info(code);
+    console.log("GETTING CONVERSION LAYERS");
+    const layers = require('../config/layers');
+    console.log("LAYERS CHARGED");
+    const lstlayers = layers.keys();
+    console.log(lstlayers.split('\n'));
+    for (let i = 0; i < lstlayers.length; i++) {
+        const ndata = layers[lstlayers[i]](data);
+        if (ndata) {
+            data = ndata;
+        }
+    }
     code = math(code);
     code = developp_var(code, function_info);
     variables_info = var_info(code, function_info);
