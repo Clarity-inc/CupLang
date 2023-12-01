@@ -7,11 +7,16 @@ const developp_var = require('./developp_var');
 const func_info = require('./func_info');
 const developp_func = require('./developp_func');
 const math = require("./math");
+const layers = require('utils/get_layers');
 
 module.exports = function(folder, callback = null) {
-    const main = `${folder}/main.cup`;
-    if (!fs.existsSync(main)) {
-        error(`The file ${main}`);
+    if (!fs.Directory.exists(folder)) {
+        const file = folder;
+    } else {
+        const file = `${folder}/main.cup`;
+    }
+    if (!fs.existsSync(file)) {
+        error(`The file ${file}`);
     }
     const package_manager = `${folder}/package.cupcake`;
     if (!fs.existsSync(package_manager)) {
@@ -19,20 +24,32 @@ module.exports = function(folder, callback = null) {
     }
     let data = {};
     try {
-        data.code = fs.readFileSync(main, 'utf8');
+        data.code = fs.readFileSync(file, 'utf8');
     } catch (err) {
         error(`Error reading file: ${err}`);
         return;
     }
+    data.file = file;
     console.log("GETTING CONVERSION LAYERS");
-    const layers = require('../config/layers');
-    console.log("LAYERS CHARGED");
-    const lstlayers = layers.keys();
+    let layer = layers[file.split('.')[-1]];
+    if (!layer) {
+        layer = layers.default;
+    }
+    if (!layer) {
+        console.log("COMPILER ERROR: NO DEFAULT LAYER");
+        console.kill();
+    }
+    console.log("LAYERS CHARGED\nFetching CupMaker...");
+    data.CupMaker = CupMaker(data);
+    console.log("Fetched!\nStarting to compile...");
+    const lstlayers = layer.keys();
     console.log(lstlayers.split('\n'));
     for (let i = 0; i < lstlayers.length; i++) {
-        const ndata = layers[lstlayers[i]](data);
+        data.CupMaker.SetLayer(lstlayers[i], i);
+        const ndata = layer[data.CupMaker.CurrentLayer](data);
         if (ndata) {
             data = ndata;
+            data.CupMaker.ProcNew(data);
         }
     }
     code = math(code);

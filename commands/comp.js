@@ -3,7 +3,7 @@ function compileFile(file) {
 }
 const translate = require('../translator/main');
 module.exports = {
-    description: "Compile a cup project into asm or machine code",
+    description: "Compile a cup project or file into asm or machine code",
     func: function(output) {
         if (!output[1]) {
             error("Command error at command\nNo such thing as folder has been detected");
