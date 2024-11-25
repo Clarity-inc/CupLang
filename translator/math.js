@@ -55,30 +55,33 @@ module.exports = function betterformula(formula) {
     return formula;
 }; 
 
-module.exports = function(data) {
-    const code = data.code;
-    const mathFormulasLines = [];
-    const mathLineRegex = /^[^]*?[+\-*/()\^%=\d\s]+[^]*$/gm;
-    const matches = code.match(mathLineRegex);
-    if (!matches) {
-        return code;
-    } 
-    mathFormulasLines.push(...matches);
-    let lines = code.split('\n');
-    let line;
-    let formula;
-    let newcode = "";
-    for (let i = 0; i < lines.length; i++) {
-        line = lines[i];
-        if (mathFormulasLines.includes(line)) {
-            const mathLineRegex = /[+\-*/()\^%=\d\s]+/g;
-            const matches = line.match(mathLineRegex);
-            formula = matches[0];
-            newcode += line.slice(0, ((-formula.length) - 1)) + betterformula(matches[0]) + "\n";
-        } else {
-            newcode += line + '\n';
+module.exports = {
+    order: 3,
+    runner: function(data) {
+        const code = data.code;
+        const mathFormulasLines = [];
+        const mathLineRegex = /^[^]*?[+\-*/()\^%=\d\s]+[^]*$/gm;
+        const matches = code.match(mathLineRegex);
+        if (!matches) {
+            return code;
+        } 
+        mathFormulasLines.push(...matches);
+        let lines = code.split('\n');
+        let line;
+        let formula;
+        let newcode = "";
+        for (let i = 0; i < lines.length; i++) {
+            line = lines[i];
+            if (mathFormulasLines.includes(line)) {
+                const mathLineRegex = /[+\-*/()\^%=\d\s]+/g;
+                const matches = line.match(mathLineRegex);
+                formula = matches[0];
+                newcode += line.slice(0, ((-formula.length) - 1)) + betterformula(matches[0]) + "\n";
+            } else {
+                newcode += line + '\n';
+            }
         }
+        data.code = newcode;
+        return newcode;
     }
-    data.code = newcode;
-    return newcode;
 };

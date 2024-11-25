@@ -1,19 +1,26 @@
-module.exports = function(data) {
-    const code = data.code;
-    let old_letter = "";
-    let is_big_comment = false;
-    let is_comment = false;
-    let new_code = "";
-    for (const letter in code.split('')) {
-        if (is_big_comment) {
-            if (letter === '/'  && old_letter === '*') {
-                    is_big_comment = false;
+module.exports = {
+    order: 1,
+    runner: function(data) {
+        const code = data.code;
+        let old_letter = "";
+        let is_big_comment = false;
+        let is_comment = false;
+        let new_code = "";
+        for (const letter of code.split('')) {
+            if (is_big_comment) {
+                if (letter === '/'  && old_letter === '*') {
+                        is_big_comment = false;
+                }
+                old_letter = letter;
+                continue;
             }
-        } else if (is_comment) {
-            if (letter === '\n') {
-                is_comment = false;
+            if (is_comment) {
+                if (letter === '\n') {
+                    is_comment = false;
+                }
+                old_letter = letter;
+                continue;
             }
-        } else {
             if (letter === '*'  && old_letter === '/') {
                 is_big_comment = true;
             } else if (letter === '/' && old_letter === '/') {
@@ -21,9 +28,9 @@ module.exports = function(data) {
             } else {
                 new_code += letter;
             }
+            old_letter = letter;
         }
-        old_letter = letter;
+        data.code = new_code;
+        return data;
     }
-    data.code = new_code;
-    return data;
 }
