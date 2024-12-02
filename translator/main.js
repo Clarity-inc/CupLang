@@ -30,29 +30,16 @@ module.exports = function(folder, callback = null) {
         return;
     }
     data.file = file;
-    console.log("GETTING CONVERSION LAYERS");
-    let layer = layers[file.split('.')[-1]];
-    if (!layer) {
-        layer = layers.default;
-    }
-    if (!layer) {
-        console.log("COMPILER ERROR: NO DEFAULT LAYER");
-        console.kill();
-    }
-    console.log("LAYERS CHARGED\nFetching CupMaker...");
+    console.log("Fetching CupMaker...");
     data.CupMaker = CupMaker(data);
     console.log("Fetched!\nStarting to compile...");
-    const lstlayers = layer.keys();
-    console.log(lstlayers.split('\n'));
-    for (let i = 0; i < lstlayers.length; i++) {
-        data.CupMaker.SetLayer(lstlayers[i], i);
+    for (const layer of layers) {
+        data.CupMaker.SetLayer(layer.runner, layer.order);
         const ndata = layer[data.CupMaker.CurrentLayer](data);
         if (ndata) {
             data = ndata;
             data.CupMaker.ProcNew(data);
         }
     }
-    code = math(code);
-    code = developp_var(code, function_info);
-    variables_info = var_info(code, function_info);
+    return data.code;
 }

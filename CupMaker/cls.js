@@ -5,21 +5,32 @@ module.exports = class {
         this.layer_num = 0;
         this.CurrentLayer = "";
     }
+    
     ProcNew(data) {
         this.code = data.code;
     }
+
     SetLayer(layer, num) {
         this.CurrentLayer = layer;
         this.layer_num = num;
     }
+
     FatalError(match, message) {
         const lines = data.code.split('\n');
+        let MSG = "";
         if (typeof match === Number) {
-            const line = lines[match];
+            MSG = `${lines[match]}\nCupLang ${data.file} -> ${match}`;
         } else {
-            // find match 80% or more
+            MSG = `No correspondance was found.\nClosest match : ${match}\n[Cuplang ${data.file} -> ?]`;
+            for(let i = 0; i < lines.length; i++) {
+                let cLine = lines[i];
+                if (cLine === match) {
+                    MSG = `${match}\n[CupLang ${data.file} -> ${i + 1}]`;
+                    break;
+                }
+            }
         }
-        console.error(MSG);
+        console.error(MSG + `\n${message}`);
         console.kill();
     }
 }
