@@ -9,11 +9,12 @@ module.exports = {
         for (const letter of code.split('')) {
             if (is_big_comment) {
                 if (letter === '/'  && old_letter === '*') {
-                        is_big_comment = false;
+                    is_big_comment = false;
                 }
                 old_letter = letter;
                 continue;
             }
+
             if (is_comment) {
                 if (letter === '\n') {
                     is_comment = false;
@@ -21,6 +22,7 @@ module.exports = {
                 old_letter = letter;
                 continue;
             }
+            
             if (letter === '*'  && old_letter === '/') {
                 is_big_comment = true;
             } else if (letter === '/' && old_letter === '/') {
